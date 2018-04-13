@@ -1,6 +1,6 @@
 {
   "name": "postcss-styled",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "PostCSS syntax for parsing styled components",
   "main": "lib/index.js",
   "scripts": {
@@ -29,12 +29,9 @@
     "postcss",
     "syntax",
     "styled",
-    "css",
-    "less",
-    "sass",
-    "scss",
-    "sss",
-    "sugarss"
+    "react",
+    "css-in-js",
+    "css"
   ],
   "author": "gucong3000",
   "license": "MIT",
@@ -43,23 +40,23 @@
   },
   "homepage": "https://github.com/gucong3000/postcss-styled#readme",
   "peerDependencies": {
-    "postcss": ">=5.0.0",
-    "postcss-safe-parser": ">=3.0.0"
+    "postcss": ">=5.0.0"
+  },
+  "dependencies": {
+    "postcss-syntax": "*"
   },
   "devDependencies": {
     "chai": "^4.1.2",
     "codecov": "^3.0.0",
     "eslint": "^4.19.1",
     "eslint-config-standard": "^11.0.0",
-    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-promise": "^3.7.0",
     "eslint-plugin-standard": "^3.0.1",
     "mocha": "^5.1.0",
     "nyc": "^11.6.0",
     "postcss": "^6.0.21",
-    "postcss-html": "^0.20.1",
-    "postcss-safe-parser": "^3.0.1",
-    "postcss-syntax": "file:../postcss-syntax"
+    "postcss-safe-parser": "^3.0.1"
   }
 }
