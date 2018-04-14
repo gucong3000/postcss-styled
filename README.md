@@ -24,14 +24,33 @@ npm install postcss-styled --save-dev
 
 ```js
 const postcss = require('postcss');
+const stylelint = require('stylelint');
 const syntax = require('postcss-styled')({
 	// syntax for parse css blocks (non-required options)
 	css: require('postcss-safe-parser'),
 });
-postcss(plugins).process(source, { syntax: syntax }).then(function (result) {
+postcss([stylelint({ fix: true })]).process(source, { syntax: syntax }).then(function (result) {
 	// An alias for the result.css property. Use it with syntaxes that generate non-CSS output.
 	result.content
 });
+```
+
+input:
+```javascript
+const Title = styled.h1`
+    font-size:   1.5em;
+      text-align:  center;
+  color: palevioletred;
+`;
+```
+
+output:
+```javascript
+const Title = styled.h1`
+	font-size: 1.5em;
+	text-align: center;
+	color: palevioletred;
+`;
 ```
 
 ## Advanced Use Cases

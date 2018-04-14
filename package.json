@@ -1,6 +1,6 @@
 {
   "name": "postcss-styled",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "PostCSS syntax for parsing styled components",
   "main": "lib/index.js",
   "scripts": {
