@@ -22,13 +22,6 @@
 				"functions": "never"
 			}
 		],
-		"comma-spacing": [
-			"error",
-			{
-				"after": true,
-				"before": false
-			}
-		],
 		"indent": [
 			"error",
 			"tab",

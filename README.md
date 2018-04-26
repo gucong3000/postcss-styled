@@ -37,6 +37,7 @@ postcss([stylelint({ fix: true })]).process(source, { syntax: syntax }).then(fun
 
 input:
 ```javascript
+import styled from 'styled-components';
 const Title = styled.h1`
     font-size:   1.5em;
       text-align:  center;
@@ -46,6 +47,7 @@ const Title = styled.h1`
 
 output:
 ```javascript
+import styled from 'styled-components';
 const Title = styled.h1`
 	font-size: 1.5em;
 	text-align: center;

@@ -1,6 +1,6 @@
 "use strict";
 
-const split = require("../lib/split");
+const split = require("../lib/extract");
 const expect = require("chai").expect;
 
 describe("parser", () => {

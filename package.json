@@ -1,6 +1,6 @@
 {
   "name": "postcss-styled",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "PostCSS syntax for parsing styled components",
   "main": "lib/index.js",
   "scripts": {
@@ -53,10 +53,11 @@
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-promise": "^3.7.0",
-    "eslint-plugin-standard": "^3.0.1",
-    "mocha": "^5.1.0",
-    "nyc": "^11.6.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "mocha": "^5.1.1",
+    "nyc": "^11.7.1",
     "postcss": "^6.0.21",
-    "postcss-safe-parser": "^3.0.1"
+    "postcss-safe-parser": "^3.0.1",
+    "postcss-syntax": "github:gucong3000/postcss-syntax#HEAD"
   }
 }
