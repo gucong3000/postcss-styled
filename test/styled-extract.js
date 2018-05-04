@@ -1,6 +1,6 @@
 "use strict";
 
-const split = require("../lib/extract");
+const extract = require("../extract");
 const expect = require("chai").expect;
 
 describe("parser", () => {
@@ -11,32 +11,32 @@ describe("parser", () => {
 	};
 
 	it("skip empty template literal", () => {
-		const result = split("``", opts);
+		const result = extract("``", opts);
 		expect(result).to.have.lengthOf(0);
 	});
 
 	it("skip spaces template literal", () => {
-		const result = split("`    `", opts);
+		const result = extract("`    `", opts);
 		expect(result).to.have.lengthOf(0);
 	});
 
 	it("skip double quotes", () => {
-		const result = split("\"$ {}\"", opts);
+		const result = extract("\"$ {}\"", opts);
 		expect(result).to.have.lengthOf(0);
 	});
 
 	it("skip standard comments", () => {
-		const result = split("/*`$ {}`*/", opts);
+		const result = extract("/*`$ {}`*/", opts);
 		expect(result).to.have.lengthOf(0);
 	});
 
 	it("skip single-line comments", () => {
-		const result = split("//`$ {}`", opts);
+		const result = extract("//`$ {}`", opts);
 		expect(result).to.have.lengthOf(0);
 	});
 
 	it("2 template literal", () => {
-		const result = split([
+		const result = extract([
 			"//`${}`",
 			"`${}`",
 			"`${}",
@@ -50,7 +50,7 @@ describe("parser", () => {
 	});
 
 	it("single line string in line 2", () => {
-		const result = split("\n`$ {}`", opts);
+		const result = extract("\n`$ {}`", opts);
 		expect(result).to.have.lengthOf(1);
 		expect(result[0]).have.property("content", "$ {}");
 		expect(result[0]).have.property("startIndex", 2);

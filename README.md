@@ -4,7 +4,7 @@ PostCSS Styled Syntax
 [![NPM version](https://img.shields.io/npm/v/postcss-styled.svg?style=flat-square)](https://www.npmjs.com/package/postcss-styled)
 [![Travis](https://img.shields.io/travis/gucong3000/postcss-styled.svg)](https://travis-ci.org/gucong3000/postcss-styled)
 [![Codecov](https://img.shields.io/codecov/c/github/gucong3000/postcss-styled.svg)](https://codecov.io/gh/gucong3000/postcss-styled)
-[![David](https://img.shields.io/david/gucong3000/postcss-styled.svg)](https://david-dm.org/gucong3000/postcss-styled)
+[![David](https://img.shields.io/david/dev/gucong3000/postcss-styled.svg)](https://david-dm.org/gucong3000/postcss-styled?type=dev)
 
 <img align="right" width="95" height="95"
 	title="Philosopher’s stone, logo of PostCSS"
@@ -39,9 +39,9 @@ input:
 ```javascript
 import styled from 'styled-components';
 const Title = styled.h1`
-    font-size:   1.5em;
-      text-align:  center;
-  color: palevioletred;
+	font-size:   1.5em;
+		text-align:  center;
+	color: palevioletred;
 `;
 ```
 
