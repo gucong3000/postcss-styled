@@ -1,20 +1,8 @@
 "use strict";
+const loadSyntax = require("postcss-syntax/load-syntax");
 
 function literalParser (source, opts, styles) {
 	styles = styles || [];
-	let templateSyntax;
-
-	function getTemplateSyntax () {
-		if (!templateSyntax) {
-			const getSyntax = require("postcss-syntax/get-syntax");
-			const cssSyntax = getSyntax("css", opts);
-			templateSyntax = {
-				parse: require(cssSyntax.parse.name === "safeParse" ? "./template-safe-parse" : "./template-parse"),
-				stringify: cssSyntax.stringify,
-			};
-		}
-		return templateSyntax;
-	}
 
 	literal(source, (startIndex, endIndex, quote) => {
 		if (quote !== "`") {
@@ -33,7 +21,7 @@ function literalParser (source, opts, styles) {
 			ignoreErrors: true,
 		};
 		if (/(^|\s|\{|\}|;|:)\$\{/m.test(strSource)) {
-			style.syntax = getTemplateSyntax();
+			style.syntax = loadSyntax(opts, __dirname);
 			style.lang = "template-literal";
 		} else {
 			style.lang = "css";
