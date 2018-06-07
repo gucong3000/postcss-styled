@@ -1,6 +1,6 @@
 {
   "name": "postcss-styled",
-  "version": "0.26.0",
+  "version": "0.27.0",
   "description": "PostCSS syntax for parsing styled components",
   "repository": {
     "type": "git",
@@ -34,15 +34,15 @@
   },
   "peerDependencies": {
     "postcss": ">=5.0.0",
-    "postcss-syntax": ">=0.26.0"
+    "postcss-syntax": ">=0.27.0"
   },
   "devDependencies": {
     "chai": "^4.1.2",
     "codecov": "^3.0.2",
     "mocha": "^5.2.0",
-    "nyc": "^11.8.0",
+    "nyc": "^12.0.2",
     "postcss": "^6.0.22",
     "postcss-safe-parser": "^3.0.1",
-    "postcss-syntax": ">=0.26.0"
+    "postcss-syntax": ">=0.27.0"
   }
 }
