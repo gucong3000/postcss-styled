@@ -46,7 +46,9 @@ describe("parser", () => {
 		expect(result[0]).have.property("content", "${}");
 		expect(result[0]).have.property("startIndex", 9);
 		expect(result[1]).have.property("content", "${}\n\\`");
+		expect(result[0]).have.property("ignoreErrors", true);
 		expect(result[1]).have.property("startIndex", 15);
+		expect(result[1]).have.property("ignoreErrors", true);
 	});
 
 	it("single line string in line 2", () => {
@@ -54,5 +56,23 @@ describe("parser", () => {
 		expect(result).to.have.lengthOf(1);
 		expect(result[0]).have.property("content", "$ {}");
 		expect(result[0]).have.property("startIndex", 2);
+		expect(result[0]).have.property("ignoreErrors", true);
+	});
+
+	it("should not ignore errors", () => {
+		const result = extract(
+			[
+				"styled('button')`$ {}`",
+				"styled.div`$ {}`",
+				"styled(Basic)`$ {}`",
+				"styled.h1`$ {}`",
+				"styled.section`$ {}`",
+			].join("\n"),
+			opts
+		);
+		expect(result).to.have.lengthOf(5);
+		result.forEach(style => {
+			expect(style).have.property("ignoreErrors", false);
+		});
 	});
 });

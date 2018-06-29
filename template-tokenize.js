@@ -6,7 +6,7 @@ function templateTokenize () {
 
 	function nextToken () {
 		const token = tokenizer.nextToken();
-		if (token && token[0] === "word" && token[1] === "$") {
+		if (token && token[0] === "word" && /(\\*)\$$/.test(token[1]) && !(RegExp.$1.length % 2)) {
 			let next = tokenizer.nextToken();
 			if (next[0] === "{" && next[2] === token[4] && next[3] === token[5] + 1) {
 				do {

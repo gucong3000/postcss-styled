@@ -3,6 +3,7 @@ const loadSyntax = require("postcss-syntax/load-syntax");
 
 function literalParser (source, opts, styles) {
 	styles = styles || [];
+	let index = 0;
 
 	literal(source, (startIndex, endIndex, quote) => {
 		if (quote !== "`") {
@@ -18,9 +19,11 @@ function literalParser (source, opts, styles) {
 		const style = {
 			startIndex: startIndex,
 			content: strSource,
-			ignoreErrors: true,
+			ignoreErrors: !/(?:^|\s+)styled(?:\.\w+|\(+[^()]*?\)+)*$/.test(source.slice(index, startIndex - 1)),
 		};
-		if (/(^|\s|\{|\}|;|:)\$\{/m.test(strSource)) {
+		index = endIndex;
+
+		if (/(\\*)\${.*?}/.test(strSource) && !(RegExp.$1.length % 2)) {
 			style.syntax = loadSyntax(opts, __dirname);
 			style.lang = "template-literal";
 		} else {
