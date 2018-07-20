@@ -38,11 +38,11 @@
   },
   "devDependencies": {
     "chai": "^4.1.2",
-    "codecov": "^3.0.2",
+    "codecov": "^3.0.4",
     "mocha": "^5.2.0",
     "nyc": "^12.0.2",
-    "postcss": "^6.0.23",
-    "postcss-safe-parser": "^3.0.1",
+    "postcss": "^7.0.0",
+    "postcss-safe-parser": "^4.0.1",
     "postcss-syntax": ">=0.31.0"
   }
 }
